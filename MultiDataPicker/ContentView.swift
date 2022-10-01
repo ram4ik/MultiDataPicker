@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State private var selectedDates: Set<DateComponents> = []
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Multi Date Picker")
+            MultiDatePicker("Dates", selection: $selectedDates)
+                .frame(height: 300)
         }
         .padding()
     }
